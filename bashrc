@@ -125,10 +125,13 @@ fi
 #recolors directory outputs from ls
 LS_COLORS='di=0;35:ln=0;35:ow=0;35' ; export LS_COLORS
 
+#cd [dir] then immediately ls
+cdls(){
+    cd "$1" && ls
+}
 
 # mkdir + cd to new dir
-mkcdir()
-{
+mkcdir() {
     mkdir -p -- "$1" &&
         cd -P -- "$1"
 }
